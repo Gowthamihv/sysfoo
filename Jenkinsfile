@@ -28,10 +28,6 @@ maven 'Maven 3.6.1'
       }
   }
 
-  post{
-    always{
-        echo 'This pipeline is completed..'
-    }
-  }
+ 
 }
 
