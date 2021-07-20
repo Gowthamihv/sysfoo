@@ -2,7 +2,7 @@ pipeline {
   agent any
  
 
-tooles{
+tools{
 
 maven 'Maven 3.6.1'
 }
