@@ -19,7 +19,7 @@ pipeline {
       steps {
         echo 'generatinga artifcat'
         sh 'mvn package -DskipTests'
-        archiveArtifacts 'target/* .war'
+        archiveArtifacts 'target/*.war'
       }
     }
 
