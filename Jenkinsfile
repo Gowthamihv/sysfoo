@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3.6.3-jdk-11-slim'
+    }
+
+  }
   stages {
     stage('build') {
       steps {
@@ -14,7 +19,6 @@ pipeline {
         sh 'mvn clean test'
       }
     }
-
 
     stage('package') {
       steps {
@@ -32,7 +36,6 @@ pipeline {
     always {
       echo 'This pipeline is completed..'
     }
-
 
   }
 }
