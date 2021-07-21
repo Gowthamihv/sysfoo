@@ -15,8 +15,7 @@ pipeline {
       }
     }
 
- 
-}
+
     stage('package') {
       steps {
         echo 'generatinga artifcat'
