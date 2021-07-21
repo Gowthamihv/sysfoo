@@ -15,6 +15,8 @@ pipeline {
       }
     }
 
+ 
+}
     stage('package') {
       steps {
         echo 'generatinga artifcat'
@@ -31,6 +33,7 @@ pipeline {
     always {
       echo 'This pipeline is completed..'
     }
+
 
   }
 }
