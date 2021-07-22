@@ -1,7 +1,13 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('build') {
+      agent {
+        docker {
+          image 'maven:3.6.3-jdk-11-slim'
+        }
+
+      }
       steps {
         echo 'compiling'
         sh 'mvn compile'
@@ -9,14 +15,25 @@ pipeline {
     }
 
     stage('test') {
+      agent {
+        docker {
+          image 'maven:3.6.3-jdk-11-slim'
+        }
+
+      }
       steps {
         echo 'run unittest'
         sh 'mvn clean test'
       }
     }
 
-
     stage('package') {
+      agent {
+        docker {
+          image 'maven:3.6.3-jdk-11-slim'
+        }
+
+      }
       steps {
         echo 'generatinga artifcat'
         sh 'mvn package -DskipTests'
@@ -32,7 +49,6 @@ pipeline {
     always {
       echo 'This pipeline is completed..'
     }
-
 
   }
 }
