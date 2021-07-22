@@ -37,9 +37,7 @@ pipeline {
     }
 
     stage('package') {
-       when {
-        branch 'master'
-    }
+      
 
       agent {
         docker {
